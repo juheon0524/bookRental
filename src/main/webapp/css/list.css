@@ -1,0 +1,171 @@
+.shareContainer {
+    margin : 0 auto;
+    width : 1800px;
+    height : 3800px;
+    position: relative;
+    padding-top: 11px ;
+}
+
+.shareImg {
+    margin : 0 auto;
+    width : 1800px;
+    height : 200px;
+    background: url(img/svisual_img.png);
+}
+
+.shareContentWrap {
+    width : 1400px;
+    height : auto;
+    position: absolute;
+    top : 80px;
+    left : 200px;
+    display:flex;
+    justify-content: space-between;
+}
+
+/* 네비 */
+.shareContentWrap > .shareNav {
+    width : 300px;
+    height : auto;
+}
+
+.shareContentWrap > .shareNav > ul > li {
+    width : 298px;
+    height : 60px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    border:1px solid #e3e3e3;
+    border-top: none;
+}
+
+.shareContentWrap > .shareNav > ul > li > span {
+    padding-left: 20px;
+}
+
+.shareContentWrap>.shareNav>ul>li>span > a {
+	text-decoration: none;
+	color: #000;	
+}
+
+.shareContentWrap>.shareNav>ul>li>.keyword > a {
+	text-decoration: none;
+	color: #f36207;
+}
+
+.shareContentWrap > .shareNav > ul > .navTitle {
+    width : 300px;
+    height : 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f36207 ;
+    color : #fff;
+    font-size: 30px;
+    border-left: none;
+    border-right: none;
+    padding-bottom: 11px;
+}
+
+.shareContentWrap > .shareContentBox {
+    width : 1050px;
+    height : auto;
+}
+
+/* contentTitle */
+.shareContentWrap > .shareContentBox > .shareContentTitle {
+    width : 1050px;
+    height : 120px;
+}
+
+.shareContentWrap > .shareContentBox > .shareContentTitle > .contentTitle {
+    font-size : 36px;
+    color:#fff;
+    height : 60px;
+}
+
+.shareContentWrap > .shareContentBox > .shareContentTitle > .contentNav {
+    height : 60px;
+    color: #fff;
+    font-size:20px;
+}
+
+.shareContentWrap > .shareContentBox > .shareContentTitle > .contentNav > .arrow {
+    display: inline-block;
+    width: 8px;
+    height:20px;
+    margin : 0 10px;
+    background: url(img/ico_naviArrow.png)0 50% no-repeat;
+    vertical-align: top;
+}
+
+.shareContentWrap > .shareContentBox > .shareContent {
+    width : 1050px;
+    height :auto;
+}
+
+.listWrap {
+    display: flex;
+}
+
+/* 이미지박스 */
+.listWrap > .listImgBox {
+    width : 250px;
+    height : 300px;
+}
+
+.listWrap > .listImgBox > img {
+    width : 150px;
+    height : 180px;
+    padding-left: 50px;
+    padding-top : 50px;
+}
+
+/* contentBox */
+.listWrap > .listContentBox {
+    width : 600px;
+    height : 300px;
+    line-height: 40px;
+}
+.listWrap > .listContentBox > h2 {
+    padding-top: 50px;
+    font-size: 20px;
+}
+
+.listWrap > .listContentBox > h2 > a {
+    text-decoration: none;
+    color:#000;
+}
+
+/* btnBox */
+.listWrap > .listBtnBox {
+    padding-top: 50px;
+    width : 200px;
+    height : 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.listWrap > .listBtnBox > input {
+    width : 100px;
+    height : 40px;
+    margin : 10px 0px;
+    border: 1px solid #f36207;
+    background-color: #fff;
+    color : #f36207;
+    cursor: pointer;
+}
+
+.listWrap > .listBtnBox > input:hover {
+    background-color: #f36207;
+    color: #fff;
+}
+
+.bookListPage {
+	margin-left: 400px;
+}
+
+.bookListPage > li > a {
+	text-decoration: none;
+	color: #000;
+}
