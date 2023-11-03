@@ -14,6 +14,11 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="script/member.js"></script>
 </head>
+<c:if test="${join == 1}">
+	<script type="text/javascript">
+		alert("회원가입에 실패했습니다.")
+	</script>
+</c:if>
 <body>
  <%@ include file="/header.jsp" %>
     <div class="shareContainer">
@@ -23,7 +28,7 @@
                 <ul>
                     <li class="navTitle">회원정보</li>
                     <li><span><a href="login.jsp">로그인</a></span></li>
-                    <li><span class="keyword"><a href="joinselect.jsp">회원가입</a></span></li>
+                    <li><span class="keyword"><a href="agree.jsp">회원가입</a></span></li>
                 </ul>
             </div>
             <div class="shareContentBox">
@@ -39,6 +44,12 @@
                 </div>
 
                 <div class="shareContent">
+	                <div class="joinNav">
+	                	<ul>  
+	                        <li>01. 약관동의<img src="image/joinStep_arr.png" alt="navicon"></li>
+	                    	<li class="keyNav">02. 회원 정보 입력<img src="image/joinStep_arrOn.png" alt="navicon"></li>
+	                    </ul>
+	                </div>
                     <div class="joinTitle">
                         <h5>회원 정보 입력</h5>
                         <p>*표시가 있는 항목은 필수 입력 항목입니다.</p>
@@ -87,7 +98,7 @@
                             <tr>
                                 <th>생년월일</th>
                                 <td>
-                                    <input type="text" id="birthdate" name="birthdate" placeholder="예시:'1971-08-08'">
+                                    <input type="text" id="birthdate" name="birthdate" placeholder="예시:'1998-05-05'">
                                 </td>
                             </tr>
                             <tr>

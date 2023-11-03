@@ -1,5 +1,6 @@
 package com.ezen.controller.action;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,7 +30,14 @@ public class JoinForm implements Action {
 		int result = ldao.joinMember(vo);
 		System.out.println("result >>>>>>>>" + result);
 		if (result == 1) {
-			response.sendRedirect("login.jsp");
+			request.setAttribute("join", 2);
+			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
+			dis.forward(request, response);
+		}else {
+			request.setAttribute("join", 1);
+			RequestDispatcher dis = request.getRequestDispatcher("join.jsp");
+			dis.forward(request, response);
+			
 		}
 
 	}

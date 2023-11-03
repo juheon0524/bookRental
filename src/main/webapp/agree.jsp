@@ -19,7 +19,7 @@
                 <ul>
                     <li class="navTitle">회원정보</li>
                     <li><span><a href="login.jsp">로그인</a></span></li>
-                    <li><span class="keyword"><a href="joinselect.jsp">회원가입</a></span></li>
+                    <li><span class="keyword"><a href="agree.jsp">회원가입</a></span></li>
                 </ul>
             </div>
             <div class="shareContentBox">
@@ -36,10 +36,9 @@
 
                 <div class="shareContent">
                     <div class="joinNav">
-                        <ul>
-                            <li>01. 회원유형 선택<img src="image/joinStep_arr.png" alt="navicon"></li>
-                            <li class="keyNav">02. 약관동의<img src="image/joinStep_arrOn.png" alt="navicon"></li>
-                            <li>03. 회원 정보 입력<img src="image/joinStep_arr.png" alt="navicon"></li>
+                        <ul>  
+                            <li class="keyNav">01. 약관동의<img src="image/joinStep_arrOn.png" alt="navicon"></li>
+                            <li>02. 회원 정보 입력<img src="image/joinStep_arr.png" alt="navicon"></li>
                         </ul>
                     </div>
 

@@ -10,6 +10,21 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
     <title>인기도서조회</title>
 </head>
+<c:if test="${wishSu == 1}">
+		<script type="text/javascript">
+			alert("이미 추가하신 도서입니다.")
+		</script>
+	
+</c:if>
+<c:if test="${wishSu == 2}">
+	<script type="text/javascript">
+        var confirmResponse = confirm("추가하셨습니다. 내 서재로 이동하시겠습니까?");
+        if (confirmResponse) {
+            // 이동할 페이지의 URL을 여기에 입력
+            window.location.href = "BookServlet?command=wish_lists";
+        }
+    </script>
+</c:if>
 <body>
 <%@ include file="/header.jsp" %>
     <div class="shareContainer">
@@ -56,7 +71,7 @@
                             <!-- 본문 내용추가 원하면 여기에 추가 -->
                         </div>
                         <div class="listBtnBox">
-                            <input type="button" value="위시리스트">
+                            <input type="button" value="위시리스트"  onclick="location.href='BookServlet?command=wish_upload&isbn=${book.isbn}&value=2'">
                             <input type="button" value="대여하기">
                         </div>
                     </form>

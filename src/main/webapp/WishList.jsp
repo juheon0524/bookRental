@@ -8,23 +8,10 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/list.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>신간도서조회</title>
+    <title>위시목록</title>
+
 </head>
-<c:if test="${wishSu == 1}">
-		<script type="text/javascript">
-			alert("이미 추가하신 도서입니다.")
-		</script>
-	
-</c:if>
-<c:if test="${wishSu == 2}">
-	<script type="text/javascript">
-        var confirmResponse = confirm("추가하셨습니다. 내 서재로 이동하시겠습니까?");
-        if (confirmResponse) {
-            // 이동할 페이지의 URL을 여기에 입력
-            window.location.href = "BookServlet?command=wish_lists";
-        }
-    </script>
-</c:if>
+
 <body>
 <%@ include file="/header.jsp"%>
     <div class="shareContainer">
@@ -32,27 +19,28 @@
         <div class="shareContentWrap">
             <div class="shareNav">
                 <ul>
-                    <li class="navTitle">도서검색</li>
-                    <li><span>통합도서 검색</span></li>
-                    <li><span class="keyword"><a href="BookServlet?command=book_dlist">신간도서 조회</a></span></li>
-                    <li><span><a href="BookServlet?command=book_plist">인기도서 조회</a></span></li>
-                    <li><span>도서 상세 페이지</span></li>
+                    <li class="navTitle">나의정보</li>
+                    <li><span>도서이용정보</span></li>
+                    <li><span class="keyword"><a href="">나만의 책장</a></span></li>
+                    <li><span><a href="">희망도서신청조회</a></span></li>
+                    <li><span>배달조회</span></li>
+                    <li><span>구독권조회</span></li>
                 </ul>
             </div>
             <div class="shareContentBox">
                 <div class="shareContentTitle">
-                    <div class="contentTitle">신간도서 조회</div>
+                    <div class="contentTitle">나만의책장</div>
                     <div class="contentNav">
                         <span>홈</span>
                         <i class="arrow" style=" background: url(image/ico_naviArrow.png)0 50% no-repeat;"></i>
-                        <span>도서검색</span>
+                        <span>내서재</span>
                         <i class="arrow" style=" background: url(image/ico_naviArrow.png)0 50% no-repeat;"></i>
-                        <span>신간도서 조회</span>
+                        <span>나만의책장</span>
                     </div>
                 </div>
 
                 <div class="shareContent">
-                    <c:forEach var="book" items="${ bookList }">
+                    <c:forEach var="book" items="${ mywish }">
                     <form class="listWrap">
                         <div class="listImgBox">
 	                        <c:choose>
@@ -71,40 +59,14 @@
                             <!-- 본문 내용추가 원하면 여기에 추가 -->
                         </div>
                         <div class="listBtnBox">
-                            <input type="button" value="위시리스트"  onclick="location.href='BookServlet?command=wish_upload&isbn=${book.isbn}&value=1'">
+                            <input type="button" value="삭제하기"  onclick="location.href='BookServlet?command=delete_wish&isbn=${book.isbn}'">
                             <input type="button" value="대여하기">
                         </div>
                     </form>
                 	</c:forEach>
                 	
                 	
-                	<ul class="bookListPage">
-						<li><c:choose>
-								<c:when test="${paging.page<=1}"> 
-					               [이전]&nbsp;
-					            </c:when>
-								<c:otherwise>
-									<a href="BookServlet?command=book_dlist&page=${paging.page-1}">[이전]</a>&nbsp;
-			          			</c:otherwise>
-							</c:choose> <c:forEach var="a" begin="${paging.startPage}"
-								end="${paging.endPage}" step="1">
-								<c:choose>
-									<c:when test="${a==paging.page}"> 
-					                  [${a}]
-					               	</c:when>
-									<c:otherwise>
-										<a href="BookServlet?command=book_dlist&page=${a}">[${a}]</a>&nbsp;
-			               			</c:otherwise>
-								</c:choose>
-							</c:forEach> <c:choose>
-								<c:when test="${paging.page>=paging.maxPage}"> 
-			             		  [다음]
-			            		</c:when>
-								<c:otherwise>
-									<a href="BookServlet?command=book_dlist&page=${paging.page+1}">[다음]</a>
-								</c:otherwise>
-							</c:choose></li>
-					</ul>               	    
+                	               	    
 
                 </div>
             </div>

@@ -63,6 +63,14 @@ private static ActionFactory instance = new ActionFactory();
 			action = new PwUpdateSuccessForm();
 		} else if (command.equals("deleteCheck")) {
 			action = new DeleteCheckForm();
+		}else if(command.equals("wish_upload")) {
+			action = new WishUploadForm();
+		}else if(command.equals("wish_lists")) {
+			action = new WishListForm();
+		}else if(command.equals("delete_wish")) {
+			action = new WishDeleteForm();
+		}else if(command.equals("agree-from")) {
+			action = new JoinAgreeForm();
 		}
 		return action;	
 	}

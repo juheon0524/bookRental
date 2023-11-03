@@ -103,7 +103,7 @@
 						</table>
 						<div class="subscrUpdateBtnBox">
 							<input type="submit" value="수정" onclick="return subscrUpdateCheck()">
-							<input type="button" value="삭제" onclick="return subscrDelCheck(); location.href='BookServlet?command=subscr_delete&subscrid=${subscr.subscrid}' ;">
+							<input type="button" value="삭제" onclick="if(subscrDelCheck()) { location.href='BookServlet?command=subscr_delete&subscrid=${subscr.subscrid}'; }">
 						</div>
 					</form>
 				</div>

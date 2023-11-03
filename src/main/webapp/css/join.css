@@ -180,7 +180,7 @@ td>.joinBtn {
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 620px;
+    top: 720px;
     left: 500px;
 }
 
@@ -194,6 +194,45 @@ td>.joinBtn {
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 620px;
+    top: 720px;
     left: 750px;
+}
+
+/* joinNav */
+.joinNav > ul {
+    display: flex;
+    padding-top: 50px;
+}
+
+.joinNav > ul > li {
+    width : 200px;
+    height : 50px;
+    color: #000;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    position: relative;
+}
+
+.joinNav > ul > li:first-child {
+    border-left: 1px solid #e3e3e3;
+}
+
+.joinNav > ul > .keyNav {
+    background-color: #f36207;
+    color: #fff;
+}
+
+.joinNav > ul > li > img {
+    width: 19px;
+    height: 50px;
+    position: absolute;
+    top : 0;
+    left : 220px;
+    z-index: 3;
 }

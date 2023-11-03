@@ -42,7 +42,7 @@
 					<ul>
 						<li><a href="BookServlet?command=login-form">로그인</a></li>
 						<li>|</li>
-						<li><a href="joinselect.jsp">회원가입</a></li>
+						<li><a href="BookServlet?command=agree-from">회원가입</a></li>
 						<li>|</li>
 						<li><a href="sitemap.jsp">사이트맵</a></li>
 					</ul>
@@ -82,7 +82,14 @@
 							<li><a href="#">구독내역 조회</a></li>
 							<li><a href="#">대여내역 조회</a></li>
 							<li><a href="#">반납현황 조회</a></li>
-							<li><a href="#">나만의 책장</a></li>
+							<c:choose>
+							    <c:when test="${loginUser.memberflag == null}">
+							        <li><a onclick="alert('로그인이 필요합니다.');">나만의 책장</a></li>
+							    </c:when>
+							    <c:otherwise>
+							        <li><a href="BookServlet?command=wish_lists" >나만의 책장</a></li>
+							    </c:otherwise>
+							</c:choose>
 						</ul>
 					</li>
 					<c:if test="${loginUser.memberflag == 01}">

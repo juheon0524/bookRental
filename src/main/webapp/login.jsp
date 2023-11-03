@@ -11,6 +11,13 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="script/member.js"></script>
 <title>로그인 창</title>
+<c:if test="${join == 2}">
+	<script type="text/javascript">
+		alert("회원가입이 완료되었습니다.")
+	</script>
+
+</c:if>
+
 <c:if test="${message == -1}">
 	<script type="text/javascript">
 		alert("없는 회원입니다.")
@@ -33,7 +40,7 @@
 				<ul>
 					<li class="navTitle">회원정보</li>
 					<li><span class="keyword"><a href="login.jsp">로그인</a></span></li>
-					<li><span><a href="joinselect.jsp">회원가입</a></span></li>
+					<li><span><a href="agree.jsp">회원가입</a></span></li>
 				</ul>
 			</div>
 			<div class="shareContentBox">
@@ -64,7 +71,7 @@
 									</div>
 									<div class="loginPw">
 										<img src="image/ico_loginPW.png" alt="pwicon"> <input
-											type="text" id="passcode" name="passcode"
+											type="password" id="passcode" name="passcode"
 											placeholder="비밀번호 입력란">
 									</div>
 									<div class="loginSub">

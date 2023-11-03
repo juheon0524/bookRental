@@ -11,12 +11,13 @@ function loginCheck() {
 		return false;
 	}
 
-
-	alert("로그인이 완료되었습니다.");
 	return true;
 }
 
+    
+
 function loginCheck2() {
+
 	if (document.frm.memberid.value.length == 0) {
 		alert("아이디를 입력해주세요.");
 		frm.memberid.focus();
@@ -63,9 +64,6 @@ function loginCheck2() {
 		frm.address.focus();
 		return false;
 	}
-
-
-	alert("회원가입이 완료되었습니다.");
 	return true;
 }
 
@@ -118,10 +116,11 @@ function isValidDate(dateString) {
 }
 
 function idCheck() {
+	
 	if (document.frm.memberid.value == "") {
 		alert("아이디를 입력해주세요.");
 		document.frm.memberid.focus();
-		return;
+		return ; 
 	}
 	let url = "BookServlet?command=idcheck&memberid=" + document.frm.memberid.value;
 	window.open(url, "_blank_1", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=450, height=200");

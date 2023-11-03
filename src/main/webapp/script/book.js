@@ -137,19 +137,14 @@ function subscrUpdateCheck(){
 		return false;
 	}
 	
-	if ((opener.frm.subscrname.value == document.frm.subscrname.value) &&
-		(opener.frm.price.value == document.frm.price.value) &&	
-		(opener.frm.salefromdate.value == document.frm.salefromdate.value) &&	
-		(opener.frm.saletodate.value == document.frm.saletodate.value) &&	
-		(opener.frm.subscrperiod.value == document.frm.subscrperiod.value) &&	
-		(opener.frm.allowedbookcnt.value == document.frm.allowedbookcnt.value) &&	
-		(opener.frm.memberid.value == document.frm.memberid.value) &&	
-		(opener.frm.registereddate.value == document.frm.registereddate.value)) {
-		alert("수정된 항목이 없습니다.")
-		return false;
-	}
-    
-    return true;
+    var inputs = document.querySelectorAll('.subscrUpdate');
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].defaultValue !== inputs[i].value) {
+        return true; // 변경된 값이 있으면 true 반환
+      }
+    }
+    alert('수정된 항목이 없습니다.');
+    return false;
 }
 
 function subscrDelCheck(){
